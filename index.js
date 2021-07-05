@@ -32,6 +32,13 @@ div.innerHTML = `<div class="card w-75">
 receipeCard.appendChild(div);
 }
 
+// clear feilds
+UI.prototype.clearFields = function(){
+  document.getElementById('receipe-name').value = '';
+  document.getElementById('ingredients').value = '';
+  document.getElementById('cooking-method').value = '';
+}
+
 // event listeners
 document.getElementById('receipe-form').addEventListener('submit',
 function(e) {
@@ -43,11 +50,14 @@ const receipeName = document.getElementById('receipe-name').value,
 // initiating receipe
 const receipe = new Receipe(receipeName, ingredients, cookingMethod);
 
-// Instiate UI
+// Instantiate UI
 const ui = new UI();
 
 // add receipe cards
 ui.addReceipeToCard(receipe);
+
+// clear feilds
+ui.clearFields();
 
 e.preventDefault();
 });
