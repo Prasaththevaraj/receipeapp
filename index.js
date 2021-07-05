@@ -20,7 +20,16 @@ const div = document.createElement('div');
 // <p class="card-text">${receipe.cookingMethod}</p>
 // </div>`;
 
+div.innerHTML = `<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">${receipe.receipeName}</h5>
+    <p class="card-text">${receipe.ingredients}</p>
+    <p class="card-text">${receipe.cookingMethod}</p>
 
+    <a href="#" class="btn btn-primary">Button</a>
+  </div>
+</div>`;
+receipeCard.appendChild(div);
 }
 
 // event listeners
