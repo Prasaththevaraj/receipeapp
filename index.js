@@ -26,7 +26,7 @@ div.innerHTML = `<div class="card w-75">
     <p class="card-text">${receipe.ingredients}</p>
     <p class="card-text">${receipe.cookingMethod}</p>
 
-    <a href="#" class="btn btn-primary">Button</a>
+    <button type="button" class="btn btn-danger">Delete</button>
   </div>
 </div>`;
 receipeCard.appendChild(div);
