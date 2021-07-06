@@ -14,19 +14,14 @@ UI.prototype.addReceipeToCard = function(receipe) {
   const receipeCard = document.getElementById("good-receipe");
 //   Create div element 
 const div = document.createElement('div');
-// div.innerHTML = `<div class="card-body">
-// <h5 class="card-title">${receipe.receipeName}</h5>
-// <p class="card-text">${receipe.ingredients}</p>
-// <p class="card-text">${receipe.cookingMethod}</p>
-// </div>`;
 
-div.innerHTML = `<div class="card w-75">
+div.innerHTML = `<div class="card w-75 delete-option">
   <div class="card-body">
     <h5 class="card-title">${receipe.receipeName}</h5>
     <p class="card-text">${receipe.ingredients}</p>
     <p class="card-text">${receipe.cookingMethod}</p>
 
-    <button type="button" class="btn btn-danger">Delete</button>
+    <button onclick= "deleteItem(this)" type="click" class="btn btn-danger">Delete</button>
   </div>
 </div>`;
 receipeCard.appendChild(div);
@@ -59,6 +54,13 @@ UI.prototype.showAlert = function(message, className) {
     document.querySelector('.alert').remove();
   }, 3000);
 }
+
+// // Delete receipe
+// UI.prototype.deleteReceipe = function(target) {
+//   if(target.className === "receipe-group") {
+//     target.parentElement.parentElement.remove();
+//   }
+// }
 // clear feilds
 UI.prototype.clearFields = function(){
   document.getElementById('receipe-name').value = '';
@@ -98,3 +100,20 @@ ui.clearFields();
 
 e.preventDefault();
 });
+
+// Event listener for delete
+
+// document.getElementById("good-receipe").addEventListener
+// ("click", function(e){
+
+  // Instantiate UI
+// const ui = new UI();
+// ui.deleteReceipe(e.target);
+
+
+// e.preventDefault();
+// });
+// delete button
+function deleteItem(elementToDelete) {
+  elementToDelete.parentElement.remove()
+}
