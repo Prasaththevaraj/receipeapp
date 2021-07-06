@@ -28,10 +28,6 @@ receipeCard.appendChild(div);
 }
 
 
-
-
-
-
 showAlert = (message, className) => {
     // Create div 
   const div = document.createElement('div');
@@ -58,22 +54,13 @@ showAlert = (message, className) => {
   }, 3000);
 }
   
-
-
-// // Delete receipe
-// UI.prototype.deleteReceipe = function(target) {
-//   if(target.className === "receipe-group") {
-//     target.parentElement.parentElement.remove();
-//   }
-// }
-
-// clear feilds
-clearFields() {
-  document.getElementById('receipe-name').value = '';
-  document.getElementById('ingredients').value = '';
-  document.getElementById('cooking-method').value = '';
+     clearFields() {
+        document.getElementById('receipe-name').value = '';
+        document.getElementById('ingredients').value = '';
+        document.getElementById('cooking-method').value = '';
+    }
 }
-}
+
 
 // event listeners
 document.getElementById('receipe-form').addEventListener('submit',
@@ -97,6 +84,9 @@ if(receipeName === '' || ingredients === '' || cookingMethod === '') {
   // add receipe cards
 ui.addReceipeToCard(receipe);
 
+// add to storage
+// Store.addReceipe(receipe);
+
 // Show success
 ui.showAlert('Receipe Added!', 'success');
 
@@ -108,21 +98,36 @@ ui.clearFields();
 e.preventDefault();
 });
 
-// Event listener for delete
-
-// document.getElementById("good-receipe").addEventListener
-// ("click", function(e){
-
-  // Instantiate UI
-// const ui = new UI();
-// ui.deleteReceipe(e.target);
-
-
-// e.preventDefault();
-// });
-
 
 // delete button
 function deleteItem(elementToDelete) {
   elementToDelete.parentElement.remove()
 }
+
+
+// Local storage 
+// class Store {
+//     static getReceipe() {
+//         let receipes;
+//         if(localStorage.getItem('receipes') === null) {
+//           receipes = [];
+//         } else {
+//           books = JSON.parse(localStorage.getItem('receipes'));
+//         }
+//         return receipes;
+//     }
+//     static  displayReceipe() {
+
+//         }
+//     static addReceipe(receipe) {
+//         const receipes = Store.getReceipes();
+
+//     receipes.push(receipe);
+
+//     localStorage.setItem('receipes', JSON.stringify(receipes));
+//     }
+//     static removeReceipe() {
+
+//     }
+// }
+

@@ -7,6 +7,7 @@
 h1 {
     text-align: center;
     margin-top: 10px;
+   text-decoration-style: dotted;
 }
 
 .receipe {
@@ -33,3 +34,17 @@ body {
 .success {
     background: green;
 }
+
+.delete-option {
+
+    
+    background-color: rgb(207, 191, 178);
+    width: 320px;
+    border: 1px solid #c9c9c9; 
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    
+    
+  }
+  
