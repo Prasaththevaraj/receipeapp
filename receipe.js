@@ -1,18 +1,18 @@
-// receipe constructor
-function Receipe(receipeName, ingredients, cookingMethod) {
-    this.receipeName = receipeName;
-    this.ingredients = ingredients;
-    this.cookingMethod = cookingMethod;
-
-
+// receipe constructer
+class Receipe {
+    constructor(receipeName, ingredients, cookingMethod) {
+        this.receipeName = receipeName;
+        this.ingredients = ingredients;
+        this.cookingMethod = cookingMethod;
+    }
 }
 
-// UI consructor 
-function UI() {}
-// add receipe to card 
-UI.prototype.addReceipeToCard = function(receipe) {
-  const receipeCard = document.getElementById("good-receipe");
-//   Create div element 
+// UI 
+class UI {
+    addReceipeToCard (receipe) {
+        const receipeCard = document.getElementById("good-receipe");
+       
+        //   Create div element 
 const div = document.createElement('div');
 
 div.innerHTML = `<div class="card w-75 delete-option">
@@ -28,9 +28,12 @@ receipeCard.appendChild(div);
 }
 
 
-// Show Alert
-UI.prototype.showAlert = function(message, className) {
-  // Create div 
+
+
+
+
+showAlert = (message, className) => {
+    // Create div 
   const div = document.createElement('div');
 
   // add classes 
@@ -54,6 +57,8 @@ UI.prototype.showAlert = function(message, className) {
     document.querySelector('.alert').remove();
   }, 3000);
 }
+  
+
 
 // // Delete receipe
 // UI.prototype.deleteReceipe = function(target) {
@@ -61,11 +66,13 @@ UI.prototype.showAlert = function(message, className) {
 //     target.parentElement.parentElement.remove();
 //   }
 // }
+
 // clear feilds
-UI.prototype.clearFields = function(){
+clearFields() {
   document.getElementById('receipe-name').value = '';
   document.getElementById('ingredients').value = '';
   document.getElementById('cooking-method').value = '';
+}
 }
 
 // event listeners
